@@ -1,0 +1,188 @@
+/* Outer Wrapper */
+.services-section-wrapper {
+    padding: 40px;
+  }
+  
+  /* New container for heading and toggle button */
+  .header-container {
+    display: flex; /* Enable Flexbox */
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Vertically align items */
+    position: relative; /* Needed for absolute positioning of the button if preferred */
+    margin-bottom: 40px; /* Space below the header */
+  }
+  
+  /* Icon Theme Toggle Button */
+  .theme-toggle-btn.icon-toggle {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    /* Remove display: flex, justify-content: flex-end, width: 100% from here */
+    /* These will now be handled by the parent .header-container */
+    position: absolute; /* Position absolutely within the header-container */
+    right: 0; /* Align to the right */
+    margin-right: 0px; /* Adjust as needed for spacing from the right edge */
+  }
+  
+  .theme-icon {
+    font-size: 28px;
+    color: #3cd856;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  
+  .theme-toggle-btn.icon-toggle:hover .theme-icon {
+    transform: rotate(20deg) scale(1.1);
+    color: #2ebd4b;
+  }
+  
+  /* Dark Theme */
+  .services-section-wrapper.dark {
+    background-color: #0d1b2a;
+    color: white;
+  }
+  
+  .services-section-wrapper.dark .hub-text,
+  .services-section-wrapper.dark .service-text {
+    fill: white;
+  }
+  
+  .services-section-wrapper.dark .services-heading {
+    color: white;
+  }
+  
+  /* Light Theme */
+  .services-section-wrapper.light {
+    background-color: #f7f7f7;
+    color: #222;
+  }
+  
+  .services-section-wrapper.light .hub-text,
+  .services-section-wrapper.light .service-text {
+    fill: #222;
+  }
+  
+  .services-section-wrapper.light .services-heading {
+    color: #0d1b2a;
+  }
+  
+  /* Centered Title */
+  .services-heading {
+    font-weight: bold;
+    text-align: center; /* Keep text-align center for the content within the heading */
+    font-size: 36px;
+    /* margin-bottom: 40px; - Removed, now handled by .header-container */
+    font-family: 'Segoe UI', sans-serif;
+    border-bottom: 2px solid #3cd856;
+    padding-bottom: 10px;
+    /* Add max-width to keep the border reasonable if the text is short */
+    max-width: fit-content; /* Adjust as needed */
+    margin: 0 auto; /* Center the heading itself within the flex container */
+  }
+  
+  /* Grid Layout */
+  .services-grid-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+  
+  /* Each Service Block */
+  .service-block {
+    background-color: transparent;
+    padding: 10px;
+    transition: transform 0.3s ease;
+  }
+  
+  .service-block:hover {
+    transform: scale(1.02);
+  }
+  
+  /* SVG Container */
+  .services-svg {
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  /* Main Hub Circle */
+  .hub-circle {
+    opacity: 0.5;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  
+  .service-block:hover .hub-circle {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  
+  /* Hub Icon Styling */
+  .hub-icon {
+    font-size: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* Label Below Hub */
+  .hub-text {
+    font-size: 18px;
+    font-weight: 700;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  /* Curved Waves */
+  .curve-path {
+    fill: none;
+    stroke-width: 2.5;
+    opacity: 0.8;
+    stroke-dasharray: 300;
+    stroke-dashoffset: 300;
+    animation: draw 0.5s ease-out forwards;
+  }
+  
+  @keyframes draw {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  
+  /* Service Text */
+  .service-text {
+    font-size: 15px;
+    font-style: italic;
+    font-family: 'Segoe UI', sans-serif;
+    transition: transform 0.3s ease;
+  }
+  
+  .service-text:hover {
+    font-weight: bold;
+    transform: scale(1.03);
+  }
+  
+  /* Responsive Grid for Mobile */
+  @media (max-width: 768px) {
+    .services-grid-wrapper {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+  
+    .services-heading {
+      font-size: 28px;
+    }
+  
+    /* Adjustments for mobile header layout */
+    .header-container {
+      flex-direction: column; /* Stack items vertically on small screens */
+      align-items: center;
+    }
+    .theme-toggle-btn.icon-toggle {
+      position: static; /* Remove absolute positioning */
+      margin-top: 10px; /* Add some space above the button */
+      margin-right: 0;
+    }
+  }
