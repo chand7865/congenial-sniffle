@@ -37,7 +37,7 @@ import ServicesDropdown from '../Services/ServicesDropdown';
 
 const navItems = [
   { label: 'Home', path: '/', icon: <HomeIcon fontSize="small" sx={{ mr: 0.5 }} /> },
-  { label: 'About Us', path: '/about', icon: <PersonOutlineIcon fontSize="small" sx={{ mr: 0.5 }} /> },
+  // { label: 'About Us', path: '/about', icon: <PersonOutlineIcon fontSize="small" sx={{ mr: 0.5 }} /> },
   // { label: 'Our Team', path: '/#team', icon: <GroupsIcon fontSize="small" sx={{ mr: 0.5 }} /> },
 ];
 

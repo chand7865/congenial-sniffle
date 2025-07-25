@@ -13,7 +13,7 @@ import AboutUs from './Aboutus';
 import CircularStat from './CircularStat';
 import vision from '../../assests/vision.jpg'
 import VisionMissionSection from './VisionMission';
-
+import StatsSection from './Stats'; 
 const HoverableCard = ({ title, description, image, alt }) => {
   const [hovered, setHovered] = useState(false);
 
@@ -294,7 +294,7 @@ const visionMissionData = [
           <ServicesSection />
 
       {/* Stats Section */}
-      <Section id="stats">
+      {/* <Section id="stats">
         <Container maxWidth="lg" sx={{ py: 8 }}>
           <Box sx={{ textAlign: 'center', mb: 6 }}>
             <Typography variant="h3" component="h2" gutterBottom sx={{ fontWeight: 700 }}>
@@ -335,7 +335,8 @@ const visionMissionData = [
             />
           </Box>
         </Container>
-      </Section>
+      </Section> */}
+      <StatsSection />  
 
       {/* Tech Stack Section */}
       <Section id="tech-stack" sx={{ pt: 0 }}>
